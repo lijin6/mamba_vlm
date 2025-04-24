@@ -1,0 +1,23 @@
+.imgList {
+    animation:rolling 18s linear infinite;
+    position: absolute;
+    display: flex;
+}
+
+@keyframes rolling {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.image {
+    width: 10vw;
+    height: 10vw;
+    margin: 10px;
+    box-shadow: 0px 4px 10px rgba(94, 21, 240, 0.6); /* 淡紫色阴影 */
+    filter: hue-rotate(270deg) brightness(1.2); /* 让图片泛紫 */
+}
