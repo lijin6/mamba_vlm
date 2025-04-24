@@ -83,6 +83,11 @@ export default function CallToActionWithVideo() {
                                 开始探索
                             </Button>
                             <Button
+                                onClick={
+                                    () => {
+                                        navigate('/about');
+                                    }
+                                }
                                 rounded={'full'}
                                 size={'lg'}
                                 fontWeight={'normal'}

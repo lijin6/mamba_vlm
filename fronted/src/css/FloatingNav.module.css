@@ -1,0 +1,63 @@
+/* 外层容器 */
+.floatingNav {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: all 0.3s ease;
+  }
+  
+  /* 小球按钮 */
+  .floatingButton {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .floatingButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* 菜单列表 */
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* 默认隐藏 */
+    margin-top: 10px;
+  }
+  
+  .menu li {
+    width: 150px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .menu li:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* 展开状态 */
+  .open .menu {
+    display: block; /* 显示菜单 */
+  }
+  
