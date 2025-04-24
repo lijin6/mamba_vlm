@@ -1,5 +1,5 @@
 # mamba_vlm
-当然可以！以下是为你的 GitHub 仓库 `mamba_vlm` 写的一个通用的 `README.md` 模板，假设你这个项目是基于 [Mamba-VLM](https://github.com/OpenGVLab/MambaVLM) 的多模态视觉语言模型，包括图像问答与报告生成功能。
+这个项目是基于 [Mamba-VLM](https://github.com/OpenGVLab/MambaVLM) 的多模态视觉语言模型，包括图像问答与报告生成功能。
 
 ---
 
