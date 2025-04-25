@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Identify from "./components/identify/index.jsx";
+import Identify from "./components/Identify.jsx";
 import HorizontalScroll from "./components/StaggeredScroll.jsx";
 import About from "./components/about/index.jsx";
 import FloatingNav from "./components/FloatingNav.jsx";

@@ -4,15 +4,15 @@ import {
 } from '@chakra-ui/react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle'; // Import the new component
+import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle'; // Dark/Light 切换组件
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const location = useLocation(); // 获取当前路由
 
-  // Navigation items matching your route structure
   const navItems = [
     { name: '首页', path: '/' },
     { name: '影像识别', path: '/identify' },
@@ -55,29 +55,33 @@ const NavBar = () => {
         {/* Desktop Navigation */}
         <Flex display={{ base: 'none', md: 'flex' }} ml={10} align="center">
           <Stack direction="row" spacing={4}>
-            {navItems.map((item) => (
-              <Button
-                key={item.name}
-                as={Link}
-                to={item.path}
-                variant="ghost"
-                _hover={{
-                  bg: useColorModeValue('blue.50', 'blue.900'),
-                  color: 'blue.500'
-                }}
-                _activeLink={{
-                  color: 'blue.500',
-                  fontWeight: 'bold'
-                }}
-              >
-                {item.name}
-              </Button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Button
+                  key={item.name}
+                  as={Link}
+                  to={item.path}
+                  variant="ghost"
+                  fontWeight={isActive ? 'bold' : 'normal'}
+                  color={isActive ? 'blue.500' : undefined}
+                  _hover={{
+                    bg: useColorModeValue('blue.50', 'blue.900'),
+                    color: 'blue.500'
+                  }}
+                  _focus={{
+                    boxShadow: isActive ? '0 0 0 2px rgba(66,153,225,0.6)' : undefined
+                  }}
+                >
+                  {item.name}
+                </Button>
+              );
+            })}
           </Stack>
           <ThemeToggle ml={4} />
         </Flex>
 
-        {/* Mobile menu button and theme toggle */}
+        {/* Mobile menu button */}
         <Flex display={{ md: 'none' }} align="center">
           <ThemeToggle mr={2} />
           <IconButton
@@ -89,7 +93,7 @@ const NavBar = () => {
         </Flex>
       </Flex>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <Collapse in={isMenuOpen} animateOpacity>
         <Box 
           pb={4}
@@ -99,26 +103,30 @@ const NavBar = () => {
           borderColor={borderColor}
         >
           <Stack as="nav" spacing={1} px={4}>
-            {navItems.map((item) => (
-              <Button
-                key={item.name}
-                as={Link}
-                to={item.path}
-                variant="ghost"
-                justifyContent="flex-start"
-                onClick={() => setIsMenuOpen(false)}
-                _hover={{
-                  bg: useColorModeValue('blue.50', 'blue.900'),
-                  color: 'blue.500'
-                }}
-                _activeLink={{
-                  color: 'blue.500',
-                  fontWeight: 'bold'
-                }}
-              >
-                {item.name}
-              </Button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Button
+                  key={item.name}
+                  as={Link}
+                  to={item.path}
+                  variant="ghost"
+                  justifyContent="flex-start"
+                  fontWeight={isActive ? 'bold' : 'normal'}
+                  color={isActive ? 'blue.500' : undefined}
+                  onClick={() => setIsMenuOpen(false)}
+                  _hover={{
+                    bg: useColorModeValue('blue.50', 'blue.900'),
+                    color: 'blue.500'
+                  }}
+                  _focus={{
+                    boxShadow: isActive ? '0 0 0 2px rgba(66,153,225,0.6)' : undefined
+                  }}
+                >
+                  {item.name}
+                </Button>
+              );
+            })}
           </Stack>
         </Box>
       </Collapse>
