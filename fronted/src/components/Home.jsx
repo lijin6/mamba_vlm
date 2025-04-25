@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import HorizontalScroll from '../../components/StaggeredScroll'
+import HorizontalScroll from './StaggeredScroll'
 import {
     Container,
     Stack,

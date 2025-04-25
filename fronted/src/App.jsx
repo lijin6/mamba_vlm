@@ -4,7 +4,9 @@ import HorizontalScroll from "./components/StaggeredScroll.jsx";
 import About from "./components/about/index.jsx";
 import FloatingNav from "./components/FloatingNav.jsx";
 import Person from "./components/person/index.jsx";
-import Index from "./components/index/index.jsx";
+
+import Home from "./components/Home.jsx";
+
 import NavBar from "./components/NavBar.jsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 function App() {
@@ -13,9 +15,9 @@ function App() {
       <ChakraProvider>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Home />} />
           <Route path="/identify" element={<Identify />} />
-          <Route path="/test123" element={<HorizontalScroll />} />
+          <Route path="/test" element={<HorizontalScroll />} />
           <Route path="/about" element={<About />} />
           <Route path="/person" element={<Person />}></Route>
         </Routes>
