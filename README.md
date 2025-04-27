@@ -3,8 +3,6 @@
 
 ---
 
-### ✅ 基本版 `README.md`（可自定义）
-
 ```markdown
 # Mamba-VLM
 

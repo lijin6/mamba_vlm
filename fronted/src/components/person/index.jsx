@@ -31,11 +31,11 @@ import {
 import { Link, Outlet } from 'react-router-dom';
 
 const LinkItems = [
-    { name: '主页', icon: FiHome, path: 'index' },
-    { name: '趋势', icon: FiTrendingUp, path: '/' },
-    { name: '发现', icon: FiCompass, path: '/' },
-    { name: '收藏', icon: FiStar, path: '/' },
-    { name: '设置', icon: FiSettings, path: '/' },
+    { name: '主页', icon: FiHome, path: './Home' },
+    { name: '趋势', icon: FiTrendingUp, path: 'echart' },
+    { name: '历史', icon: FiCompass, path: 'history' },
+    { name: '收藏', icon: FiStar, path: 'setting' },
+    { name: '设置', icon: FiSettings, path: 'setting' },
 ]
 
 const SidebarContent = ({ onClose, ...rest }) => {
@@ -138,7 +138,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                                 <Avatar
                                     size={'sm'}
                                     src={
-                                        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+                                        ''
                                     }
                                 />
                                 <VStack
@@ -146,9 +146,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
                                     alignItems="flex-start"
                                     spacing="1px"
                                     ml="2">
-                                    <Text fontSize="sm">admin</Text>
+                                    <Text fontSize="sm">医师</Text>
                                     <Text fontSize="xs" color="gray.600">
-                                        管理员
+                                        张三
                                     </Text>
                                 </VStack>
                                 <Box display={{ base: 'none', md: 'flex' }}>
@@ -159,7 +159,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                         <MenuList
                             bg={useColorModeValue('white', 'gray.900')}
                             borderColor={useColorModeValue('gray.200', 'gray.700')}>
-                            <MenuItem>Sign out</MenuItem>
+                            <MenuItem>注销</MenuItem>
                         </MenuList>
                     </Menu>
                 </Flex>

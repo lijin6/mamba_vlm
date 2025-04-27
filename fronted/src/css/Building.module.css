@@ -1,0 +1,50 @@
+
+
+  .container {
+    max-width: 600px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .building_h1 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+
+  .building_p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* 加载动画 */
+  .loader {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #dddddd;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* 联系信息 */
+  .contact {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .contact:hover {
+    text-decoration: underline;
+  }
